@@ -18,7 +18,7 @@ const Gallery = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Inside the Academy</div>
           <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Glimpses from <span className="italic gold-text">our cohorts</span>
+            Glimpses from <span className="gold-text">our cohorts</span>
           </h2>
         </div>
 

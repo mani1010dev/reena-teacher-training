@@ -42,7 +42,7 @@ const Programs = () => {
         <div className="text-center max-w-2xl mx-auto mb-20">
           <div className="inline-block text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Our Courses</div>
           <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Training paths for <span className="italic gold-text">every educator</span>
+            Training paths for <span className="gold-text">every educator</span>
           </h2>
           <p className="mt-4 text-muted-foreground">From your first step into Montessori to advanced mastery — we have a programme crafted for your journey.</p>
         </div>

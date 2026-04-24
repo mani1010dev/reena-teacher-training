@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Sparkles, Award } from "lucide-react";
 import butterfly from "@/assets/butterfly-cocoon.png";
 
 const Hero = () => {
@@ -15,13 +15,14 @@ const Hero = () => {
 
       <div className="container relative flex flex-col items-center text-center">
         <div className="animate-fade-up flex flex-col items-center">
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card/70 backdrop-blur border border-gold/40 text-xs uppercase tracking-[0.25em] text-primary">
-              <Sparkles className="w-3.5 h-3.5 text-gold-deep" />
-              <span>Montessori Teacher Training Academy</span>
+          <div className="inline-flex items-center gap-4 px-4 py-1.5 rounded-full bg-card/70 backdrop-blur border border-gold/40 text-[10px] uppercase tracking-[0.2em] text-primary mb-8">
+            <div className="flex items-center gap-1.5 pr-4 border-r border-gold/30">
+              <Sparkles className="w-3 h-3 text-gold-deep" />
+              <span>Montessori Academy</span>
             </div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/5 backdrop-blur border border-primary/20 text-xs uppercase tracking-[0.25em] text-primary font-semibold">
-              NSDC Approved
+            <div className="flex items-center gap-1.5">
+              <Award className="w-3 h-3 text-gold-deep" />
+              <span>NSDC Approved</span>
             </div>
           </div>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-primary text-balance max-w-4xl">

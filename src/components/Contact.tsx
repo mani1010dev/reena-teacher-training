@@ -114,7 +114,7 @@ const Contact = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Begin the Journey</div>
           <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Two ways to <span className="italic gold-text">get started</span>
+            Two ways to <span className="gold-text">get started</span>
           </h2>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">

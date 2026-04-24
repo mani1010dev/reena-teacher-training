@@ -46,7 +46,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Voices of Our Graduates</div>
           <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Trained here, <span className="italic gold-text">teaching everywhere</span>
+            Trained here, <span className="gold-text">teaching everywhere</span>
           </h2>
         </div>
 

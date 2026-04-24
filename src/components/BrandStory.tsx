@@ -26,7 +26,7 @@ const BrandStory = () => {
           <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Our Signature Story</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary leading-[1.05] text-balance">
             From Cocoon
-            <span className="block italic gold-text">to Confidence</span>
+            <span className="block gold-text">to Confidence</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
             The cocoon is not a cage — it is a quiet promise. At Mrs Reena's Cocoon, we believe great

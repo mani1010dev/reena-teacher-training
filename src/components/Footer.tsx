@@ -8,6 +8,9 @@ const Footer = () => (
             <div className="font-serif text-2xl">Mrs Reena's Cocoon</div>
           </div>
           <p className="text-primary-foreground/70 max-w-md">Where children blossom and educators take flight. Crafted with care since 2012.</p>
+          <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-[10px] uppercase tracking-widest text-gold-soft border border-white/5">
+            NSDC Approved Training Center
+          </div>
         </div>
         <div>
           <div className="text-xs uppercase tracking-widest text-gold-soft mb-4">Explore</div>
