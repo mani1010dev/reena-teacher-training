@@ -22,7 +22,6 @@ const Footer = () => (
           <div className="text-xs uppercase tracking-widest text-gold-soft mb-4">Connect</div>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
             <li>+91 98407 33736</li>
-            <li>hello@reenascocoon.in</li>
             <li>No.5/13 a, Mullai Nagar, Ramapuram, Chennai - 600089</li>
           </ul>
         </div>
