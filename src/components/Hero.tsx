@@ -21,7 +21,7 @@ const Hero = () => {
           </div>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-primary text-balance max-w-4xl">
             Become the Teacher
-            <span className="block italic gold-text mt-2">Every Child Deserves</span>
+            <span className="block gold-text mt-2">Every Child Deserves</span>
           </h1>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl leading-relaxed">
             A premier Montessori training academy shaping confident, certified educators. Learn the
