@@ -54,7 +54,7 @@ const Hero = () => {
           <div className="relative" data-reveal="right">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-[12px] border-white/50 rotate-2 hover:rotate-0 transition-all duration-700">
               <img 
-                src="/hero-photo.png" 
+                src="/Materiales Educativos para Maestras.jfif" 
                 alt="Montessori Training" 
                 className="w-full h-full object-cover aspect-[4/5] lg:aspect-square"
               />
