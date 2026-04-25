@@ -37,24 +37,26 @@ const courses = [
 
 const Programs = () => {
   return (
-    <section id="courses" className="py-24 lg:py-32 relative">
+    <section id="courses" className="py-24 lg:py-32 relative bg-secondary">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <div className="inline-block text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Our Courses</div>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Training paths for <span className="gold-text">every educator</span>
+        <div className="text-center max-w-2xl mx-auto mb-20" data-reveal="up">
+          <div className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Our Courses</div>
+          <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
+            Training paths for <span className="italic">every educator</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">From your first step into Montessori to advanced mastery — we have a programme crafted for your journey.</p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">From your first step into Montessori to advanced mastery — we have a programme crafted for your journey.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {courses.map(c => (
-            <div key={c.title} className="group relative rounded-3xl p-8 bg-card gold-border glow-on-hover">
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-purple-grad flex items-center justify-center shadow-purple">
-                  <c.icon className="w-6 h-6 text-gold-soft" />
+          {courses.map((c, i) => (
+            <div key={c.title} 
+                 data-reveal="up" 
+                 className={`group relative rounded p-8 bg-card border border-border hover:shadow-lg transition-all duration-300 stagger-${(i % 2) + 1}`}>
+              <div className="flex items-start justify-between mb-8">
+                <div className="w-14 h-14 rounded bg-primary flex items-center justify-center shadow-sm">
+                  <c.icon className="w-6 h-6 text-accent" />
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-gold-deep px-3 py-1 rounded-full border border-gold/40">{c.badge}</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold px-3 py-1 rounded border border-accent/20 bg-accent/5">{c.badge}</span>
               </div>
               <h3 className="font-serif text-2xl text-primary mb-3">{c.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">{c.desc}</p>

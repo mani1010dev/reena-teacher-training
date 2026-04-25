@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Users } from "lucide-react";
 
 const branches = [
   {
@@ -6,42 +6,79 @@ const branches = [
     address: "No.5/13 a, Mullai Nagar, Ramapuram, Chennai, Tamil Nadu 600089",
     phone: "+91 98407 33736",
     email: "admissions@reenascocoon.in",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.123!2d80.178!3d13.029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d8a5555555%3A0x5555555555555555!2sRamapuram%2C%20Chennai!5e0!3m2!1sen!2sin!4v1714041111111!5m2!1sen!2sin",
+    hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
   {
     name: "Online Learning Hub",
     address: "Live virtual classrooms · Open to learners globally",
     phone: "+91 98407 33736",
     email: "online@reenascocoon.in",
+    map: null,
+    hours: "Flexible Batches",
   },
 ];
 
 const Locations = () => {
   return (
-    <section id="locations" className="py-24 lg:py-32 bg-secondary/30">
+    <section id="locations" className="py-24 lg:py-32 bg-secondary">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Visit Us</div>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Our <span className="italic gold-text">campuses</span>
+        <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
+          <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Visit Us</div>
+          <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
+            Our <span className="italic">Campuses</span>
           </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">Drop by our Chennai center or join our global online community.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {branches.map(b => (
-            <div key={b.name} className="rounded-3xl bg-card gold-border p-8 shadow-elegant glow-on-hover flex flex-col">
-              <div className="aspect-[4/3] rounded-2xl bg-purple-grad/90 mb-6 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, hsl(var(--gold)) 0%, transparent 50%), radial-gradient(circle at 70% 70%, hsl(var(--gold)) 0%, transparent 50%)' }} />
-                <MapPin className="absolute inset-0 m-auto w-10 h-10 text-gold-soft" />
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {branches.map((b, i) => (
+            <div key={b.name} 
+                 data-reveal={i === 0 ? "left" : "right"}
+                 className="clean-card p-8 flex flex-col md:flex-row gap-8 overflow-hidden group">
+              <div className="md:w-1/2 flex flex-col">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-primary text-[10px] uppercase tracking-widest mb-6 w-fit font-bold">
+                  {b.name.includes("Online") ? "Virtual" : "Physical Campus"}
+                </div>
+                <h3 className="font-serif text-3xl text-primary mb-6 font-bold">{b.name}</h3>
+                <div className="space-y-4 text-muted-foreground flex-1">
+                  <p className="flex gap-3 text-sm leading-relaxed"><MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.address}</p>
+                  <p className="flex gap-3 text-sm leading-relaxed"><Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.phone}</p>
+                  <p className="flex gap-3 text-sm leading-relaxed"><Mail className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.email}</p>
+                  <p className="flex gap-3 text-sm leading-relaxed"><Clock className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.hours}</p>
+                </div>
+                {b.map ? (
+                  <a href={`https://maps.google.com/?q=${encodeURIComponent(b.address)}`} 
+                     target="_blank" rel="noreferrer" 
+                     className="btn-primary mt-8 inline-flex items-center justify-center gap-2">
+                    Get Directions
+                  </a>
+                ) : (
+                  <a href="#contact" className="btn-outline mt-8 inline-flex items-center justify-center gap-2">
+                    Enroll Online
+                  </a>
+                )}
               </div>
-              <h3 className="font-serif text-xl text-primary mb-3">{b.name}</h3>
-              <div className="space-y-2 text-sm text-muted-foreground flex-1">
-                <p className="flex gap-2"><MapPin className="w-4 h-4 text-gold-deep shrink-0 mt-0.5" />{b.address}</p>
-                <p className="flex gap-2"><Phone className="w-4 h-4 text-gold-deep shrink-0 mt-0.5" />{b.phone}</p>
-                <p className="flex gap-2"><Mail className="w-4 h-4 text-gold-deep shrink-0 mt-0.5" />{b.email}</p>
+              
+              <div className="md:w-1/2 min-h-[300px] relative rounded-lg overflow-hidden bg-secondary border border-border">
+                {b.map ? (
+                  <iframe 
+                    title={b.name}
+                    src={b.map}
+                    className="absolute inset-0 w-full h-full"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-primary p-8 text-center text-primary-foreground">
+                    <div className="flex flex-col items-center">
+                      <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                        <Users className="w-8 h-8 text-accent" />
+                      </div>
+                      <p className="font-serif italic text-lg text-white/90 leading-relaxed">"Connecting aspiring educators from across the globe through our live digital classroom."</p>
+                    </div>
+                  </div>
+                )}
               </div>
-              <a href={`https://maps.google.com/?q=${encodeURIComponent(b.address)}`} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-gold/50 text-primary hover:bg-gold hover:text-primary transition-colors text-sm">
-                Open in Maps →
-              </a>
             </div>
           ))}
         </div>

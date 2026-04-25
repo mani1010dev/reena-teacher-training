@@ -8,43 +8,36 @@ const stages = [
 
 const BrandStory = () => {
   return (
-    <section id="story" className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background">
-      <div className="absolute inset-0 pointer-events-none opacity-30" aria-hidden>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold/30 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/20 blur-[120px]" />
-      </div>
-
-      <div className="container relative grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative flex justify-center">
-          <div className="relative w-full max-w-md aspect-square">
-            <div className="absolute inset-0 rounded-full bg-gold/20 blur-3xl animate-shimmer" />
-            <img src={butterfly} alt="Butterfly emerging from cocoon" className="relative w-full h-full object-contain animate-float" width={1024} height={1024} loading="lazy" />
+    <section id="story" className="py-24 lg:py-32 bg-white">
+      <div className="container grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative flex justify-center" data-reveal="left">
+          <div className="relative w-full max-w-sm aspect-square bg-secondary rounded-2xl flex items-center justify-center p-8">
+            <img src={butterfly} alt="Butterfly emerging from cocoon" className="relative w-full h-auto object-contain opacity-80" />
           </div>
         </div>
 
-        <div>
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Our Signature Story</div>
-          <h2 className="font-serif text-4xl md:text-6xl text-primary leading-[1.05] text-balance">
-            From Cocoon
-            <span className="block gold-text">to Confidence</span>
+        <div data-reveal="right">
+          <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Our Signature Story</div>
+          <h2 className="font-serif text-4xl md:text-6xl text-primary leading-[1.1] text-balance font-bold">
+            From Cocoon to <span className="italic">Confidence</span>
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
             The cocoon is not a cage — it is a quiet promise. At Mrs Reena's Cocoon, we believe great
             educators are not born; they are gently shaped, mentored and set free to fly.
           </p>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-12 space-y-8">
             {stages.map((s, i) => (
-              <div key={s.title} className="flex gap-5 group">
+              <div key={s.title} className={`flex gap-6 group stagger-${i + 1}`}>
                 <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full bg-purple-grad flex items-center justify-center text-gold-soft font-serif shadow-purple group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded bg-primary flex items-center justify-center text-white font-serif font-bold shrink-0">
                     {i + 1}
                   </div>
-                  {i < stages.length - 1 && <div className="w-px flex-1 bg-gradient-to-b from-gold/60 to-transparent mt-2" />}
+                  {i < stages.length - 1 && <div className="w-px flex-1 bg-border mt-2" />}
                 </div>
-                <div className="pb-6">
-                  <h4 className="font-serif text-xl text-primary">{s.title}</h4>
-                  <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
+                <div className="pb-2">
+                  <h4 className="font-serif text-xl text-primary font-bold">{s.title}</h4>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}

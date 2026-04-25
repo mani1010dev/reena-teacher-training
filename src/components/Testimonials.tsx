@@ -1,4 +1,6 @@
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const quotes = [
   {
@@ -40,35 +42,63 @@ const quotes = [
 ];
 
 const Testimonials = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [Autoplay({ delay: 5000 })]);
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-secondary/20">
+    <section id="testimonials" className="py-24 lg:py-32 bg-[hsl(var(--highlight))] overflow-hidden border-y border-border">
       <div className="container">
-        <div className="text-center mb-16">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">Voices of Our Graduates</div>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            Trained here, <span className="gold-text">teaching everywhere</span>
-          </h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-reveal="up">
+          <div className="max-w-2xl">
+            <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Voices of Our Graduates</div>
+            <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
+              Trained here, <span className="italic">Teaching Everywhere</span>
+            </h2>
+          </div>
+          <div className="flex gap-4">
+            <button onClick={scrollPrev} className="w-12 h-12 flex items-center justify-center rounded-full border border-border text-primary hover:bg-primary hover:text-white transition-all bg-white shadow-sm">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button onClick={scrollNext} className="w-12 h-12 flex items-center justify-center rounded-full border border-border text-primary hover:bg-primary hover:text-white transition-all bg-white shadow-sm">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {quotes.map((t, idx) => (
-            <div key={idx} className="relative rounded-3xl bg-card gold-border p-8 shadow-elegant flex flex-col hover:scale-[1.02] transition-transform duration-300">
-              <Quote className="absolute -top-4 right-8 w-10 h-10 text-gold/30" />
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />)}
-              </div>
-              <p className="font-serif text-lg text-primary leading-relaxed italic mb-8 flex-1">"{t.text}"</p>
-              <div className="flex items-center gap-4 pt-6 border-t border-gold/10">
-                <div className="w-12 h-12 rounded-full bg-purple-grad text-gold-soft font-serif text-lg flex items-center justify-center shadow-purple shrink-0">
-                  {t.initials}
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container flex">
+            {quotes.map((t, idx) => (
+              <div key={idx} className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 pl-6">
+                <div className="relative h-full clean-card p-8 flex flex-col group">
+                  <div className="w-10 h-10 rounded bg-secondary flex items-center justify-center mb-6">
+                    <Quote className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />)}
+                  </div>
+                  <p className="text-lg text-primary/80 leading-relaxed italic mb-8 flex-1">"{t.text}"</p>
+                  <div className="flex items-center gap-4 pt-6 border-t border-border">
+                    <div className="w-12 h-12 rounded bg-primary text-white font-serif text-lg flex items-center justify-center shrink-0">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <div className="font-bold text-primary leading-tight">{t.name}</div>
+                      <div className="text-xs text-muted-foreground mt-1">{t.role}</div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-serif text-base text-primary leading-tight">{t.name}</div>
-                  <div className="text-xs text-muted-foreground mt-1">{t.role}</div>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 text-center" data-reveal="up">
+          <p className="text-sm text-muted-foreground mb-6">Join our community of certified Montessori educators.</p>
+          <a href="https://wa.me/919840733736" target="_blank" rel="noreferrer" className="btn-outline inline-flex items-center gap-2">
+            Chat with Alumni Mentors →
+          </a>
         </div>
       </div>
     </section>

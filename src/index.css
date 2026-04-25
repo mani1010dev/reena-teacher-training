@@ -1,65 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Mrs Reena's Cocoon — Premium design system
-   Deep purple, soft gold, cream/ivory. All HSL.
-*/
-
 @layer base {
   :root {
-    --background: 42 38% 96%;          /* ivory cream */
-    --foreground: 270 40% 14%;         /* deep purple ink */
+    --background: 36 33% 93%;           /* #F5EFE6 Cream */
+    --foreground: 22 20% 15%;           /* Deep Muted Brown/Black */
 
-    --card: 42 50% 98%;
-    --card-foreground: 270 40% 14%;
+    --card: 0 0% 100%;                  /* Pure white for cards */
+    --card-foreground: 22 20% 15%;
 
-    --popover: 42 50% 98%;
-    --popover-foreground: 270 40% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 22 20% 15%;
 
-    --primary: 271 52% 24%;            /* deep royal purple */
-    --primary-foreground: 42 50% 97%;
-    --primary-glow: 280 55% 45%;
+    --primary: 22 30% 20%;              /* Muted Deep Brown */
+    --primary-foreground: 36 33% 93%;
 
-    --secondary: 42 40% 92%;
-    --secondary-foreground: 271 52% 24%;
+    --secondary: 95 23% 92%;            /* #E8F0E3 Sage Green */
+    --secondary-foreground: 22 20% 15%;
 
-    --muted: 42 30% 90%;
-    --muted-foreground: 271 15% 38%;
+    --highlight: 205 61% 95%;           /* #EAF4FB Soft Blue */
 
-    --accent: 42 65% 55%;              /* soft gold */
-    --accent-foreground: 271 52% 14%;
-    --gold: 42 70% 58%;
-    --gold-soft: 42 55% 75%;
-    --gold-deep: 38 60% 42%;
+    --muted: 36 33% 85%;
+    --muted-foreground: 22 10% 40%;
 
-    --destructive: 0 70% 45%;
-    --destructive-foreground: 42 50% 97%;
+    --accent: 38 92% 45%;               /* Premium Gold */
+    --accent-foreground: 22 30% 20%;
 
-    --border: 42 30% 86%;
-    --input: 42 30% 86%;
-    --ring: 271 52% 34%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 36 33% 93%;
 
-    --radius: 1rem;
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 22 30% 20%;
 
-    /* Gradients */
-    --gradient-cream: linear-gradient(135deg, hsl(42 50% 97%) 0%, hsl(42 45% 93%) 50%, hsl(42 60% 90%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42 75% 65%) 0%, hsl(38 65% 50%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(271 52% 24%) 0%, hsl(280 55% 38%) 100%);
-    --gradient-hero: radial-gradient(ellipse at top right, hsl(42 70% 80% / 0.6) 0%, transparent 55%),
-                     radial-gradient(ellipse at bottom left, hsl(280 50% 80% / 0.35) 0%, transparent 55%),
-                     linear-gradient(135deg, hsl(42 50% 97%) 0%, hsl(42 40% 93%) 100%);
-    --gradient-gold-text: linear-gradient(135deg, hsl(42 75% 55%) 0%, hsl(38 70% 38%) 100%);
+    --radius: 0.5rem;
 
-    /* Shadows */
-    --shadow-gold: 0 10px 40px -10px hsl(42 70% 50% / 0.35);
-    --shadow-purple: 0 20px 50px -15px hsl(271 52% 24% / 0.3);
-    --shadow-elegant: 0 8px 30px -8px hsl(271 30% 20% / 0.15);
-    --shadow-glow: 0 0 40px hsl(42 80% 60% / 0.4);
-
-    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -67,71 +46,85 @@
   * { @apply border-border; }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
-    font-feature-settings: "ss01", "cv01";
+    font-family: 'Outfit', sans-serif;
   }
   h1, h2, h3, h4, h5 {
-    font-family: 'Cormorant Garamond', serif;
-    @apply tracking-tight;
+    font-family: 'Playfair Display', serif;
+    @apply tracking-tight text-primary;
   }
-  html { scroll-behavior: smooth; }
+  html { 
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Clean Selection */
+  ::selection {
+    @apply bg-primary/10 text-primary;
+  }
+
+  /* Minimalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
 }
 
 @layer components {
-  .gold-text {
-    background: var(--gradient-gold-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .gold-accent {
+    @apply text-accent font-medium;
   }
-  .gold-border {
-    position: relative;
-    background: hsl(var(--card));
+  
+  .clean-card {
+    @apply bg-white border border-border shadow-sm hover:shadow-md transition-all duration-300 rounded-xl;
   }
-  .gold-border::before {
-    content: '';
-    position: absolute; inset: 0;
-    padding: 1.5px;
-    border-radius: inherit;
-    background: var(--gradient-gold);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-all active:scale-95 shadow-sm;
   }
-  .glow-on-hover {
-    transition: all 0.5s var(--transition-smooth);
-  }
-  .glow-on-hover:hover {
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-4px);
+
+  .btn-outline {
+    @apply border border-primary/20 text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/5 transition-all active:scale-95;
   }
 }
 
 @layer utilities {
-  .bg-hero { background: var(--gradient-hero); }
-  .bg-gold { background: var(--gradient-gold); }
-  .bg-purple-grad { background: var(--gradient-purple); }
-  .shadow-gold { box-shadow: var(--shadow-gold); }
-  .shadow-purple { box-shadow: var(--shadow-purple); }
-  .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .text-balance { text-wrap: balance; }
+  .bg-navy { @apply bg-primary text-primary-foreground; }
 }
 
-@keyframes float-butterfly {
-  0%, 100% { transform: translate(0,0) rotate(-2deg); }
-  25% { transform: translate(20px,-30px) rotate(3deg); }
-  50% { transform: translate(-10px,-50px) rotate(-1deg); }
-  75% { transform: translate(15px,-25px) rotate(2deg); }
-}
-@keyframes shimmer {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-float { animation: float-butterfly 12s ease-in-out infinite; }
-.animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
-.animate-fade-up { animation: fade-up 0.8s var(--transition-smooth) both; }
+.animate-fade-up { animation: fade-up 0.6s var(--transition-smooth) both; }
+
+/* Clean Reveal Animations */
+[data-reveal] {
+  opacity: 0;
+  transition: all 0.6s var(--transition-smooth);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+[data-reveal="up"] { transform: translateY(20px); }
+[data-reveal="left"] { transform: translateX(-20px); }
+[data-reveal="right"] { transform: translateX(20px); }
+[data-reveal="scale"] { transform: scale(0.98); }
+
+/* Stagger Delays */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+.stagger-4 { transition-delay: 400ms; }
+.stagger-5 { transition-delay: 500ms; }

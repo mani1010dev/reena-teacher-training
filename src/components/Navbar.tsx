@@ -1,50 +1,86 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { href: "#top", label: "Home" },
   { href: "#courses", label: "Courses" },
-  { href: "#story", label: "Our Story" },
   { href: "#curriculum", label: "Curriculum" },
   { href: "#gallery", label: "Gallery" },
   { href: "#testimonials", label: "Voices" },
+  { href: "#contact", label: "Apply" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    document.querySelectorAll("section[id]").forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-gold/20">
-      <div className="container flex items-center justify-between h-20">
-        <a href="#top" className="flex items-center gap-3">
-          <img src="/teacher-logo.png" alt="Mrs Reena's Cocoon Logo" className="h-14 w-auto object-contain" />
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'h-16 bg-background/95 backdrop-blur-md border-b border-border shadow-sm' : 'h-24 bg-transparent'}`}>
+      <div className="container flex items-center justify-between h-full">
+        <a href="#top" className="flex items-center gap-3 group">
+          <img src="/teacher-logo.png" alt="Logo" className={`transition-all duration-300 ${scrolled ? 'h-9' : 'h-12'} w-auto object-contain`} />
           <div className="leading-tight">
-            <div className="font-serif text-lg text-primary">Mrs Reena's Cocoon</div>
-            <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">Montessori Training Academy</div>
+            <div className={`font-serif font-bold transition-all duration-300 ${scrolled ? 'text-base' : 'text-xl'} text-primary`}>Mrs Reena's Cocoon</div>
+            <div className="text-[9px] tracking-[0.25em] uppercase text-muted-foreground hidden sm:block">Montessori Academy</div>
           </div>
         </a>
-        <nav className="hidden lg:flex items-center gap-8">
+
+        <nav className="hidden lg:flex items-center gap-10">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="text-sm text-foreground/80 hover:text-primary transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full">
+            <a key={l.href} href={l.href} 
+               className={`text-sm transition-all relative py-1 ${activeSection === l.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground/60 hover:text-primary'}`}>
+              {l.label}
+              {activeSection === l.href.slice(1) && (
+                <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-primary rounded-full" />
+              )}
+            </a>
+          ))}
+          <a href="#contact" className="px-6 py-2.5 rounded bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all">
+            Join Academy
+          </a>
+        </nav>
+
+        <button className="lg:hidden w-10 h-10 flex items-center justify-center rounded bg-secondary border border-border text-primary" onClick={() => setOpen(!open)} aria-label="Menu">
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`lg:hidden fixed inset-0 top-[64px] bg-background transition-all duration-500 ${open ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
+        <div className="container py-12 flex flex-col items-center gap-8">
+          {links.map(l => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} 
+               className={`text-2xl font-serif ${activeSection === l.href.slice(1) ? 'text-primary' : 'text-muted-foreground'}`}>
               {l.label}
             </a>
           ))}
-          <a href="#contact" className="px-5 py-2 rounded-full bg-gold text-primary text-sm font-medium shadow-gold hover:scale-105 transition-transform">
+          <a href="#contact" onClick={() => setOpen(false)} className="mt-4 px-12 py-4 rounded bg-primary text-primary-foreground font-medium">
             Apply Now
           </a>
-        </nav>
-        <button className="lg:hidden text-primary" onClick={() => setOpen(!open)} aria-label="Menu">
-          {open ? <X /> : <Menu />}
-        </button>
-      </div>
-      {open && (
-        <div className="lg:hidden border-t border-gold/20 bg-background/95">
-          <div className="container py-4 flex flex-col gap-4">
-            {links.map(l => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-foreground/80 hover:text-primary">{l.label}</a>
-            ))}
-          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };

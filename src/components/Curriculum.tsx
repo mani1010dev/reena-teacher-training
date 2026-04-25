@@ -11,29 +11,31 @@ const items = [
 
 const Curriculum = () => {
   return (
-    <section id="curriculum" className="py-24 lg:py-32">
+    <section id="curriculum" className="py-24 lg:py-32 bg-background">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold-deep mb-4">The Training Journey</div>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary text-balance">
-            A curriculum that <span className="gold-text">unfolds with intention</span>
+        <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
+          <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">The Training Journey</div>
+          <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
+            A curriculum that unfolds with <span className="italic">intention</span>
           </h2>
         </div>
 
         <div className="relative">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
-          <div className="space-y-12">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border" />
+          <div className="space-y-16">
             {items.map((it, i) => (
-              <div key={it.title} className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 ? 'md:flex-row-reverse' : ''}`}>
+              <div key={it.title} 
+                   data-reveal={i % 2 ? "left" : "right"}
+                   className={`flex flex-col md:flex-row items-center gap-8 stagger-${(i % 3) + 1} ${i % 2 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="flex-1">
                   <div className={`max-w-sm ${i % 2 ? 'md:mr-auto' : 'md:ml-auto md:text-right'}`}>
-                    <div className="text-xs uppercase tracking-[0.25em] text-gold-deep mb-2">{it.time}</div>
-                    <h3 className="font-serif text-2xl text-primary">{it.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">{it.desc}</p>
+                    <div className="text-xs uppercase tracking-[0.25em] text-accent font-bold mb-2">{it.time}</div>
+                    <h3 className="font-serif text-2xl md:text-3xl text-primary font-bold">{it.title}</h3>
+                    <p className="text-muted-foreground mt-3 leading-relaxed">{it.desc}</p>
                   </div>
                 </div>
-                <div className="relative shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-card gold-border flex items-center justify-center shadow-elegant glow-on-hover">
+                <div className="relative shrink-0 z-10">
+                  <div className="w-14 h-14 rounded-full bg-white border-2 border-primary flex items-center justify-center shadow-md">
                     <it.icon className="w-6 h-6 text-primary" />
                   </div>
                 </div>

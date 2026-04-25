@@ -1,39 +1,81 @@
-const Footer = () => (
-  <footer className="bg-purple-grad text-primary-foreground pt-20 pb-10">
-    <div className="container">
-      <div className="grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-4">
-            <img src="/teacher-logo.png" alt="" className="h-12 w-auto object-contain brightness-0 invert" />
-            <div className="font-serif text-2xl">Mrs Reena's Cocoon</div>
+import { Instagram, Facebook, Youtube, Linkedin, ArrowUp, Mail, Phone, MapPin } from "lucide-react";
+
+const Footer = () => {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  return (
+    <footer className="pt-24 pb-12 bg-primary text-white relative">
+      <div className="container relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20" data-reveal="up">
+          <div className="space-y-8">
+            <a href="#top" className="flex items-center gap-3">
+              <img src="/teacher-logo.png" alt="Logo" className="h-10 w-auto brightness-0 invert" />
+              <div className="font-serif text-2xl font-bold">Mrs Reena's Cocoon</div>
+            </a>
+            <p className="text-sm text-white/60 leading-relaxed max-w-xs">
+              Dedicated to the authentic Montessori method, shaping the next generation of compassionate and skilled educators.
+            </p>
+            <div className="flex gap-3">
+              {[Instagram, Facebook, Youtube, Linkedin].map((Icon, i) => (
+                <a key={i} href="#" className="w-10 h-10 rounded bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary transition-all duration-300">
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
-          <p className="text-primary-foreground/70 max-w-md">Where children blossom and educators take flight. Crafted with care since 2012.</p>
-          <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-[10px] uppercase tracking-widest text-gold-soft border border-white/5">
-            NSDC Approved Training Center
+
+          <div>
+            <h4 className="text-accent font-bold uppercase tracking-widest text-xs mb-8">Quick Links</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><a href="#courses" className="hover:text-accent transition-colors">Training Programs</a></li>
+              <li><a href="#story" className="hover:text-accent transition-colors">Our Philosophy</a></li>
+              <li><a href="#gallery" className="hover:text-accent transition-colors">Academy Gallery</a></li>
+              <li><a href="#testimonials" className="hover:text-accent transition-colors">Graduate Stories</a></li>
+              <li><a href="#contact" className="hover:text-accent transition-colors">Admissions</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-accent font-bold uppercase tracking-widest text-xs mb-8">Contact Us</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li className="flex gap-3"><MapPin className="w-4 h-4 text-accent shrink-0" /> No.5/13 a, Ramapuram, Chennai</li>
+              <li className="flex gap-3"><Phone className="w-4 h-4 text-accent shrink-0" /> +91 98407 33736</li>
+              <li className="flex gap-3"><Mail className="w-4 h-4 text-accent shrink-0" /> admissions@reenascocoon.in</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-accent font-bold uppercase tracking-widest text-xs mb-8">Newsletter</h4>
+            <p className="text-sm text-white/70 mb-6">Stay updated with our latest workshops and intake dates.</p>
+            <form className="relative">
+              <input 
+                type="email" 
+                placeholder="Email address" 
+                className="w-full bg-white/10 border border-white/20 rounded py-3 px-4 text-sm focus:outline-none focus:border-accent transition-colors"
+              />
+              <button className="absolute right-1 top-1 bottom-1 px-4 rounded bg-accent text-primary text-xs font-bold hover:opacity-90 transition-colors">
+                Join
+              </button>
+            </form>
           </div>
         </div>
-        <div>
-          <div className="text-xs uppercase tracking-widest text-gold-soft mb-4">Explore</div>
-          <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li><a href="#programs" className="hover:text-gold-soft">Programs</a></li>
-            <li><a href="#story" className="hover:text-gold-soft">Our Story</a></li>
-            <li><a href="#gallery" className="hover:text-gold-soft">Gallery</a></li>
-            <li><a href="#contact" className="hover:text-gold-soft">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="text-xs uppercase tracking-widest text-gold-soft mb-4">Connect</div>
-          <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li>+91 98407 33736</li>
-            <li>No.5/13 a, Mullai Nagar, Ramapuram, Chennai - 600089</li>
-          </ul>
+
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">
+            © {new Date().getFullYear()} Mrs Reena's Cocoon Montessori Academy.
+          </p>
+          
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/40 hover:text-accent transition-colors font-bold group"
+          >
+            Back to Top
+            <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+          </button>
         </div>
       </div>
-      <div className="mt-12 pt-8 border-t border-gold-soft/20 text-center text-xs text-primary-foreground/60">
-        © {new Date().getFullYear()} Mrs Reena's Cocoon. Crafted with intention.
-      </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;
