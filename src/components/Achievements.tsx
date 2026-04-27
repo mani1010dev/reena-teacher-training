@@ -3,7 +3,7 @@ import { ShieldCheck, Award, Users, BookCheck } from "lucide-react";
 const items = [
   {
     icon: ShieldCheck,
-    title: "NSDC Approved",
+    title: "NSDC and NSDVE Approved",
     desc: "A government-recognized training partner ensuring national standards.",
   },
   {

@@ -3,35 +3,17 @@ import { GraduationCap, BookOpen, Award, Sparkles, Clock, Users } from "lucide-r
 const courses = [
   {
     icon: GraduationCap,
-    title: "Diploma in Montessori Method",
+    title: "Diploma in advance Montessori teacher training",
     desc: "Our flagship programme — a deep, hands-on study of the Montessori philosophy, materials and practicum across all key learning areas.",
-    duration: "9 Months",
     mode: "Hybrid",
     badge: "Flagship",
   },
   {
-    icon: BookOpen,
-    title: "Foundation Course",
-    desc: "An immersive introduction to Montessori principles, child psychology and the prepared environment. Perfect for beginners.",
-    duration: "6 Months",
-    mode: "Online + Workshops",
-    badge: "Beginner",
-  },
-  {
     icon: Award,
-    title: "Advanced Practitioner",
+    title: "Advance diploma in advance Montessori teacher training",
     desc: "For experienced educators ready to lead classrooms, mentor staff and master advanced Montessori pedagogy.",
-    duration: "12 Months",
     mode: "Full-time",
     badge: "Advanced",
-  },
-  {
-    icon: Sparkles,
-    title: "Short Certification Modules",
-    desc: "Phonics, sensorial learning, EPL, classroom management & storytelling — focused certificates for working teachers.",
-    duration: "4 – 8 Weeks",
-    mode: "Weekend",
-    badge: "Specialist",
   },
 ];
 
@@ -61,7 +43,6 @@ const Programs = () => {
               <h3 className="font-serif text-2xl text-primary mb-3">{c.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">{c.desc}</p>
               <div className="flex items-center gap-5 text-xs text-muted-foreground pt-5 border-t border-gold/20">
-                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-gold-deep" />{c.duration}</span>
                 <span className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-gold-deep" />{c.mode}</span>
               </div>
             </div>

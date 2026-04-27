@@ -43,7 +43,7 @@ const Navbar = () => {
           <img src="/teacher-logo.png" alt="Logo" className={`transition-all duration-300 ${scrolled ? 'h-9' : 'h-12'} w-auto object-contain`} />
           <div className="leading-tight">
             <div className={`font-serif font-bold transition-all duration-300 ${scrolled ? 'text-base' : 'text-xl'} text-primary`}>Mrs Reena's Cocoon</div>
-            <div className="text-[9px] tracking-[0.25em] uppercase text-muted-foreground hidden sm:block">Montessori Academy</div>
+            <div className="text-[9px] tracking-[0.25em] uppercase text-muted-foreground hidden sm:block">Teacher Training Institute</div>
           </div>
         </a>
 

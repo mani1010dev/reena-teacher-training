@@ -62,7 +62,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold">
-            © {new Date().getFullYear()} Mrs Reena's Cocoon Montessori Academy.
+            © {new Date().getFullYear()} Mrs Reena's Cocoon Teacher Training Institute.
           </p>
           
           <button 
