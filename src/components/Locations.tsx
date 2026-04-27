@@ -1,11 +1,10 @@
-import { MapPin, Phone, Mail, Clock, Users } from "lucide-react";
+import { MapPin, Phone, Clock, Users } from "lucide-react";
 
 const branches = [
   {
     name: "Chennai Campus",
     address: "No.5/13 a, Mullai Nagar, Ramapuram, Chennai, Tamil Nadu 600089",
     phone: "+91 98407 33736",
-    email: "admissions@reenascocoon.in",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.123!2d80.178!3d13.029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d8a5555555%3A0x5555555555555555!2sRamapuram%2C%20Chennai!5e0!3m2!1sen!2sin!4v1714041111111!5m2!1sen!2sin",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
@@ -13,7 +12,6 @@ const branches = [
     name: "Online Learning Hub",
     address: "Live virtual classrooms · Open to learners globally",
     phone: "+91 98407 33736",
-    email: "online@reenascocoon.in",
     map: null,
     hours: "Flexible Batches",
   },
@@ -44,7 +42,6 @@ const Locations = () => {
                 <div className="space-y-4 text-muted-foreground flex-1">
                   <p className="flex gap-3 text-sm leading-relaxed"><MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.address}</p>
                   <p className="flex gap-3 text-sm leading-relaxed"><Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.phone}</p>
-                  <p className="flex gap-3 text-sm leading-relaxed"><Mail className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.email}</p>
                   <p className="flex gap-3 text-sm leading-relaxed"><Clock className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.hours}</p>
                 </div>
                 {b.map ? (

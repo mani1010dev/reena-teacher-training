@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Youtube, Linkedin, ArrowUp, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Youtube, Linkedin, ArrowUp, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -40,7 +40,6 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/70">
               <li className="flex gap-3"><MapPin className="w-4 h-4 text-accent shrink-0" /> No.5/13 a, Ramapuram, Chennai</li>
               <li className="flex gap-3"><Phone className="w-4 h-4 text-accent shrink-0" /> +91 98407 33736</li>
-              <li className="flex gap-3"><Mail className="w-4 h-4 text-accent shrink-0" /> admissions@reenascocoon.in</li>
             </ul>
           </div>
 

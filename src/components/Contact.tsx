@@ -12,6 +12,18 @@ const ApplicationForm = () => {
   const prev = () => setStep(s => Math.max(s - 1, 0));
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const message = `*New Admission Application*
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Qualification: ${data.education}
+Experience: ${data.experience}
+Course: ${data.course}`;
+
+    const whatsappUrl = `https://wa.me/919840733736?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+
     toast.success("Application received", { description: "Our admissions team will reach out within 24 hours." });
     setData({ name: "", email: "", phone: "", education: "", experience: "Fresher", course: "Diploma in Montessori Method" });
     setStep(0);
@@ -82,23 +94,78 @@ const Field = ({ label, value, onChange, placeholder }: any) => (
 );
 
 const InquiryForm = () => {
+  const [inquiryData, setInquiryData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    course: "Diploma in Montessori Method",
+    background: ""
+  });
+
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const message = `*Quick Inquiry*
+Name: ${inquiryData.name}
+Email: ${inquiryData.email}
+Phone: ${inquiryData.phone}
+Course: ${inquiryData.course}
+Background: ${inquiryData.background}`;
+
+    const whatsappUrl = `https://wa.me/919840733736?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+
     toast.success("Inquiry sent", { description: "We'll send the brochure to your inbox shortly." });
-    (e.target as HTMLFormElement).reset();
+    setInquiryData({
+      name: "",
+      email: "",
+      phone: "",
+      course: "Diploma in Montessori Method",
+      background: ""
+    });
   };
+
   return (
     <form onSubmit={submit} className="clean-card p-8 bg-primary text-white">
       <h3 className="font-serif text-3xl mb-2 font-bold">Quick Inquiry</h3>
       <p className="text-sm text-white/60 mb-8">Get the brochure, fee structure & cohort calendar.</p>
       <div className="space-y-5">
-        {["Full Name", "Email Address", "Phone Number"].map(l => (
-          <input key={l} required placeholder={l} className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none transition-all" />
-        ))}
-        <select className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white focus:border-accent focus:outline-none">
+        <input 
+          required 
+          value={inquiryData.name}
+          onChange={e => setInquiryData({ ...inquiryData, name: e.target.value })}
+          placeholder="Full Name" 
+          className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none transition-all" 
+        />
+        <input 
+          required 
+          type="email"
+          value={inquiryData.email}
+          onChange={e => setInquiryData({ ...inquiryData, email: e.target.value })}
+          placeholder="Email Address" 
+          className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none transition-all" 
+        />
+        <input 
+          required 
+          value={inquiryData.phone}
+          onChange={e => setInquiryData({ ...inquiryData, phone: e.target.value })}
+          placeholder="Phone Number" 
+          className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none transition-all" 
+        />
+        <select 
+          value={inquiryData.course}
+          onChange={e => setInquiryData({ ...inquiryData, course: e.target.value })}
+          className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white focus:border-accent focus:outline-none"
+        >
           {["Diploma in Montessori Method", "Foundation Course", "Advanced Practitioner", "Short Certification Modules"].map(p => <option key={p} className="text-primary">{p}</option>)}
         </select>
-        <textarea placeholder="Tell us about your background…" rows={3} className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none" />
+        <textarea 
+          value={inquiryData.background}
+          onChange={e => setInquiryData({ ...inquiryData, background: e.target.value })}
+          placeholder="Tell us about your background…" 
+          rows={3} 
+          className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:outline-none" 
+        />
         <button className="w-full py-4 rounded bg-accent text-primary font-bold shadow-sm hover:opacity-90 transition-all uppercase tracking-widest text-xs">
           Request Brochure
         </button>
