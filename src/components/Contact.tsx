@@ -6,7 +6,7 @@ const steps = ["Details", "Background", "Course"];
 
 const ApplicationForm = () => {
   const [step, setStep] = useState(0);
-  const [data, setData] = useState({ name: "", email: "", phone: "", education: "", experience: "Fresher", course: "Diploma in Montessori Method" });
+  const [data, setData] = useState({ name: "", email: "", phone: "", education: "", experience: "Fresher", course: "Diploma in advance Montessori teacher training" });
 
   const next = () => setStep(s => Math.min(s + 1, steps.length - 1));
   const prev = () => setStep(s => Math.max(s - 1, 0));
@@ -25,7 +25,7 @@ Course: ${data.course}`;
     window.open(whatsappUrl, "_blank");
 
     toast.success("Application received", { description: "Our admissions team will reach out within 24 hours." });
-    setData({ name: "", email: "", phone: "", education: "", experience: "Fresher", course: "Diploma in Montessori Method" });
+    setData({ name: "", email: "", phone: "", education: "", experience: "Fresher", course: "Diploma in advance Montessori teacher training" });
     setStep(0);
   };
 
@@ -66,7 +66,7 @@ Course: ${data.course}`;
           <div>
             <label className="block text-[10px] uppercase tracking-widest text-accent font-bold mb-3">Course of Interest</label>
             <select value={data.course} onChange={e => setData({ ...data, course: e.target.value })} className="w-full px-4 py-3 rounded bg-secondary border border-border focus:border-primary focus:outline-none text-primary font-medium">
-              {["Diploma in Montessori Method", "Foundation Course", "Advanced Practitioner", "Short Certification Modules"].map(p => <option key={p}>{p}</option>)}
+              {["Diploma in advance Montessori teacher training", "Advance diploma in advance Montessori teacher training"].map(p => <option key={p}>{p}</option>)}
             </select>
             <p className="text-xs text-muted-foreground mt-4 leading-relaxed italic">A counsellor will share course details, fees and the next cohort start date.</p>
           </div>
@@ -98,7 +98,7 @@ const InquiryForm = () => {
     name: "",
     email: "",
     phone: "",
-    course: "Diploma in Montessori Method",
+    course: "Diploma in advance Montessori teacher training",
     background: ""
   });
 
@@ -120,7 +120,7 @@ Background: ${inquiryData.background}`;
       name: "",
       email: "",
       phone: "",
-      course: "Diploma in Montessori Method",
+      course: "Diploma in advance Montessori teacher training",
       background: ""
     });
   };
@@ -157,7 +157,7 @@ Background: ${inquiryData.background}`;
           onChange={e => setInquiryData({ ...inquiryData, course: e.target.value })}
           className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white focus:border-accent focus:outline-none"
         >
-          {["Diploma in Montessori Method", "Foundation Course", "Advanced Practitioner", "Short Certification Modules"].map(p => <option key={p} className="text-primary">{p}</option>)}
+          {["Diploma in advance Montessori teacher training", "Advance diploma in advance Montessori teacher training"].map(p => <option key={p} className="text-primary">{p}</option>)}
         </select>
         <textarea 
           value={inquiryData.background}
