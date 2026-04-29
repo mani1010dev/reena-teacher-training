@@ -21,7 +21,7 @@ const Hero = () => {
             </div>
             
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-[1.05] mb-8 font-bold">
-              Shaping the <span className="italic text-accent">Educators</span> <br /> 
+              Shaping the <span className="text-accent">Educators</span> <br /> 
               of Tomorrow
             </h1>
             

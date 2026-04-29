@@ -16,7 +16,7 @@ const Curriculum = () => {
         <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
           <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">The Training Journey</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
-            A curriculum that unfolds with <span className="italic">intention</span>
+            A curriculum that unfolds with <span>intention</span>
           </h2>
         </div>
 

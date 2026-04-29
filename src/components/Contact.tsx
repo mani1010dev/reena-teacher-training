@@ -77,7 +77,7 @@ Course: ${data.course}`;
             <select value={data.course} onChange={e => setData({ ...data, course: e.target.value })} className="w-full px-4 py-3 rounded bg-secondary border border-border focus:border-primary focus:outline-none text-primary font-medium">
               {courseOptions.map(p => <option key={p}>{p}</option>)}
             </select>
-            <p className="text-xs text-muted-foreground mt-4 leading-relaxed italic">A counsellor will share course details, fees and the next cohort start date.</p>
+            <p className="text-xs text-muted-foreground mt-4 leading-relaxed">A counsellor will share course details, fees and the next cohort start date.</p>
           </div>
         )}
       </div>
@@ -190,7 +190,7 @@ const Contact = () => {
         <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
           <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Begin the Journey</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
-            Two ways to <span className="italic">get started</span>
+            Two ways to <span>get started</span>
           </h2>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">

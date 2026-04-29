@@ -24,7 +24,7 @@ const Locations = () => {
         <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
           <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Visit Us</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
-            Our <span className="italic">Campuses</span>
+            Our <span>Campuses</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">Drop by our Chennai centers to begin your journey.</p>
         </div>
@@ -65,7 +65,7 @@ const Locations = () => {
                       <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
                         <Users className="w-8 h-8 text-accent" />
                       </div>
-                      <p className="font-serif italic text-lg text-white/90 leading-relaxed">"Connecting aspiring educators from across the globe through our live digital classroom."</p>
+                      <p className="font-serif text-lg text-white/90 leading-relaxed">"Connecting aspiring educators from across the globe through our live digital classroom."</p>
                     </div>
                   </div>
                 )}

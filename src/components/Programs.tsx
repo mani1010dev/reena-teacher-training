@@ -61,7 +61,7 @@ const Programs = () => {
         <div className="text-center max-w-2xl mx-auto mb-20" data-reveal="up">
           <div className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Professional Training</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
-            Training paths for <span className="italic">every educator</span>
+            Training paths for <span>every educator</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">Choose your specialization and unlock a global career in Montessori and Early Childhood Education.</p>
         </div>
@@ -127,7 +127,7 @@ const Programs = () => {
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest font-bold text-accent mb-4">Description</h4>
-                  <p className="text-primary/70 leading-relaxed italic text-lg">"{selectedCourse.desc}"</p>
+                  <p className="text-primary/70 leading-relaxed text-lg">"{selectedCourse.desc}"</p>
                 </div>
                 
                 <div className="space-y-8">
@@ -154,7 +154,7 @@ const Programs = () => {
               </div>
 
               <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div className="text-sm text-muted-foreground italic">Interested in this course? Reach out to our counselor.</div>
+                <div className="text-sm text-muted-foreground">Interested in this course? Reach out to our counselor.</div>
                 <a 
                   href={`https://wa.me/919840733736?text=I'm interested in the ${selectedCourse.title}`}
                   target="_blank"

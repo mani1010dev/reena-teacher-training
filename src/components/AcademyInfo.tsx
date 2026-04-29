@@ -10,7 +10,7 @@ const AcademyInfo = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-primary text-[10px] uppercase tracking-widest mb-6 font-bold">
               Requirements
             </div>
-            <h2 className="font-serif text-4xl text-primary mb-8 font-bold">Course <span className="italic">Eligibility</span></h2>
+            <h2 className="font-serif text-4xl text-primary mb-8 font-bold">Course <span>Eligibility</span></h2>
             
             <div className="space-y-8">
               <div className="p-6 rounded-lg border border-border bg-secondary/10">
@@ -58,7 +58,7 @@ const AcademyInfo = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-primary text-[10px] uppercase tracking-widest mb-6 font-bold">
               Future Prospects
             </div>
-            <h2 className="font-serif text-4xl text-primary mb-8 font-bold">Career <span className="italic">Opportunities</span></h2>
+            <h2 className="font-serif text-4xl text-primary mb-8 font-bold">Career <span>Opportunities</span></h2>
             <p className="text-muted-foreground mb-8">After completing our courses, students can work in various roles in reputed preschools and institutions:</p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

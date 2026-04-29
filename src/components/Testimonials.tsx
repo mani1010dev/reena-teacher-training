@@ -79,7 +79,7 @@ const Testimonials = () => {
             </div>
           </div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold mb-6">
-            Hear from our <span className="italic">Community</span>
+            Hear from our <span>Community</span>
           </h2>
           <p className="text-muted-foreground text-lg">Real stories from the educators and parents who shape our journey every day.</p>
         </div>
@@ -110,7 +110,7 @@ const Testimonials = () => {
                     </div>
                   </div>
 
-                  <p className="text-[12px] text-primary/70 leading-relaxed mb-5 flex-1 italic relative z-10 line-clamp-5">
+                  <p className="text-[12px] text-primary/70 leading-relaxed mb-5 flex-1 relative z-10 line-clamp-5">
                     "{t.text}"
                   </p>
 

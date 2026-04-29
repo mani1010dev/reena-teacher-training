@@ -28,7 +28,7 @@ const Gallery = () => {
         <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
           <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Inside the Institute</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
-            Glimpses from <span className="italic">Our Cohorts</span>
+            Glimpses from <span>Our Cohorts</span>
           </h2>
         </div>
 
