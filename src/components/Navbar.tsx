@@ -59,7 +59,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#contact" className="px-6 py-2.5 rounded bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all">
-            Join Academy
+            Join Institute
           </a>
         </nav>
 

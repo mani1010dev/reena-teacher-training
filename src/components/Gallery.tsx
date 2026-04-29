@@ -26,7 +26,7 @@ const Gallery = () => {
     <section id="gallery" className="py-24 lg:py-32 bg-secondary overflow-hidden">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="up">
-          <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Inside the Academy</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">Inside the Institute</div>
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
             Glimpses from <span className="italic">Our Cohorts</span>
           </h2>
@@ -42,7 +42,7 @@ const Gallery = () => {
             >
               <img 
                 src={it.src} 
-                alt="Academy photo" 
+                alt="Institute photo" 
                 loading="lazy" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
               />

@@ -6,7 +6,7 @@ const quotes = [
   {
     name: "Ramya Raghu",
     date: "a year ago",
-    text: "From the moment I enrolled as a student in Reena's cocoon Montessori teacher training academy I felt supported and encouraged by Mrs. Reena mam . Mam's guidance helped me to gain the skills needed for an effective educator. I highly recommend this academy to the future educators who is passionate about Montessori education.",
+    text: "From the moment I enrolled as a student in Reena's cocoon Montessori teacher training institute I felt supported and encouraged by Mrs. Reena mam . Mam's guidance helped me to gain the skills needed for an effective educator. I highly recommend this institute to the future educators who is passionate about Montessori education.",
     initials: "RR",
     color: "bg-indigo-500",
   },
@@ -73,7 +73,7 @@ const Testimonials = () => {
         <div className="text-center max-w-3xl mx-auto mb-20" data-reveal="up">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white shadow-sm text-[11px] uppercase tracking-widest text-primary font-bold mb-8 border border-border">
             <GoogleLogo />
-            <span>Top Rated Academy in Chennai</span>
+            <span>Top Rated Institute in Chennai</span>
             <div className="flex gap-0.5 ml-2">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#FBBC05] text-[#FBBC05]" />)}
             </div>
@@ -81,7 +81,7 @@ const Testimonials = () => {
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold mb-6">
             Hear from our <span className="italic">Community</span>
           </h2>
-          <p className="text-muted-foreground text-lg">Real stories from the educators and parents who shape our academy every day.</p>
+          <p className="text-muted-foreground text-lg">Real stories from the educators and parents who shape our journey every day.</p>
         </div>
 
         <div className="embla px-4" ref={emblaRef}>

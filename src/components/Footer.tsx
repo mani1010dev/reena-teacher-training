@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/70">
               <li><a href="#courses" className="hover:text-accent transition-colors">Training Programs</a></li>
               <li><a href="#story" className="hover:text-accent transition-colors">Our Philosophy</a></li>
-              <li><a href="#gallery" className="hover:text-accent transition-colors">Academy Gallery</a></li>
+              <li><a href="#gallery" className="hover:text-accent transition-colors">Institute Gallery</a></li>
               <li><a href="#testimonials" className="hover:text-accent transition-colors">Graduate Stories</a></li>
               <li><a href="#contact" className="hover:text-accent transition-colors">Admissions</a></li>
             </ul>

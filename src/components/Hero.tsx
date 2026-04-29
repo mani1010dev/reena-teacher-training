@@ -17,15 +17,16 @@ const Hero = () => {
             <div className="animate-fade-up flex flex-col items-start text-left relative z-10">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded bg-white border border-border text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-8 shadow-sm">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span>Premium Montessori Teacher Training Academy</span>
+              <span>Premium Montessori Teacher Training Institute</span>
             </div>
             
-            <h1 className="font-serif text-5xl md:text-7xl xl:text-8xl leading-[1.05] text-primary text-balance font-bold mb-8">
-              Shaping the <span className="text-accent italic text-glow">Educators</span> of Tomorrow
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-[1.05] mb-8 font-bold">
+              Shaping the <span className="italic text-accent">Educators</span> <br /> 
+              of Tomorrow
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10">
-              A premier Montessori training academy dedicated to excellence. Gain the certification, skills, and confidence to lead the next generation of learners.
+            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium">
+              A premier Montessori training institute dedicated to excellence. Gain the certification, skills, and confidence to lead the next generation of learners.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">

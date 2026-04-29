@@ -66,25 +66,25 @@ const Programs = () => {
           <p className="mt-4 text-muted-foreground leading-relaxed">Choose your specialization and unlock a global career in Montessori and Early Childhood Education.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {courses.map((c, i) => (
             <div 
               key={c.title} 
               data-reveal="up" 
               onClick={() => setSelectedCourse(c)}
-              className={`group relative flex items-center gap-5 rounded-2xl p-5 bg-white border border-border/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-pointer stagger-${(i % 3) + 1}`}
+              className={`group relative rounded-[2rem] p-8 bg-white border border-border/40 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer stagger-${(i % 3) + 1}`}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shadow-md shrink-0 transform group-hover:rotate-6 transition-transform duration-500">
-                <c.icon className="w-6 h-6 text-accent" />
+              <div className="flex items-start justify-between mb-8">
+                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shadow-lg transform group-hover:rotate-6 transition-transform duration-500">
+                  <c.icon className="w-6 h-6 text-accent" />
+                </div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold px-3 py-1 rounded-full border border-accent/20 bg-accent/5">{c.badge}</span>
               </div>
-              <div className="flex-1 min-w-0">
-                <span className="text-[8px] uppercase tracking-[0.2em] text-accent font-bold mb-1 block">{c.badge}</span>
-                <h3 className="font-serif text-base md:text-lg text-primary font-bold leading-tight group-hover:text-accent transition-colors duration-300 truncate-2-lines">
-                  {c.title}
-                </h3>
-              </div>
-              <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0">
-                <span className="text-accent text-lg">→</span>
+              <h3 className="font-serif text-2xl text-primary font-bold leading-tight group-hover:text-accent transition-colors duration-300">
+                {c.title}
+              </h3>
+              <div className="mt-8 flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                View Details <span>→</span>
               </div>
             </div>
           ))}
