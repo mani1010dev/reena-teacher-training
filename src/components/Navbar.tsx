@@ -43,14 +43,14 @@ const Navbar = () => {
           <img src="/teacher-logo.png" alt="Logo" className={`transition-all duration-300 ${scrolled ? 'h-9' : 'h-12'} w-auto object-contain`} />
           <div className="leading-tight">
             <div className={`font-serif font-bold transition-all duration-300 ${scrolled ? 'text-base' : 'text-xl'} text-primary`}>Mrs Reena's Cocoon</div>
-            <div className="text-[9px] tracking-[0.25em] uppercase text-muted-foreground hidden sm:block">Teacher Training Institute</div>
+            <div className={`text-[8px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.2em] uppercase font-bold transition-all duration-300 ${scrolled ? 'text-primary/70' : 'text-accent'} block`}>Teacher Training Institute</div>
           </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-10">
           {links.map(l => (
             <a key={l.href} href={l.href} 
-               className={`text-sm transition-all relative py-1 ${activeSection === l.href.slice(1) ? 'text-primary font-semibold' : 'text-foreground/60 hover:text-primary'}`}>
+               className={`text-sm transition-all relative py-1 ${activeSection === l.href.slice(1) ? 'text-primary font-semibold' : 'text-primary/60 hover:text-primary font-medium'}`}>
               {l.label}
               {activeSection === l.href.slice(1) && (
                 <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-primary rounded-full" />

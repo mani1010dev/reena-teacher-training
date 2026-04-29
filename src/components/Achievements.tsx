@@ -1,25 +1,20 @@
-import { ShieldCheck, Award, Users, BookCheck } from "lucide-react";
+import { Award, Users, BookCheck } from "lucide-react";
 
 const items = [
   {
-    icon: ShieldCheck,
-    title: "NSDC and NSDVE Approved",
-    desc: "A government-recognized training partner ensuring national standards.",
+    icon: Award,
+    title: "100% Placement Assistance",
+    desc: "Strong support and guidance to help students secure jobs in reputed institutions.",
   },
   {
-    icon: Award,
-    title: "Global Certification",
-    desc: "Valid in over 120 countries for Montessori teaching careers.",
+    icon: Users,
+    title: "Internship Opportunities",
+    desc: "Hands-on internship programs to give real classroom experience during training.",
   },
   {
     icon: BookCheck,
     title: "Practical Mastery",
-    desc: "Hands-on experience with original Montessori materials and setups.",
-  },
-  {
-    icon: Users,
-    title: "Expert Mentors",
-    desc: "Guided by Mrs. Reena and industry veterans with 20+ years of experience.",
+    desc: "Activity-based learning with a focus on classroom handling and methodology.",
   },
 ];
 
@@ -27,7 +22,7 @@ const Achievements = () => {
   return (
     <section className="py-24 bg-[hsl(var(--highlight))] border-y border-border">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((it, i) => (
             <div key={it.title} 
                  data-reveal="up" 

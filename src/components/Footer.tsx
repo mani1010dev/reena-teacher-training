@@ -38,7 +38,7 @@ const Footer = () => {
           <div>
             <h4 className="text-accent font-bold uppercase tracking-widest text-xs mb-8">Contact Us</h4>
             <ul className="space-y-4 text-sm text-white/70">
-              <li className="flex gap-3"><MapPin className="w-4 h-4 text-accent shrink-0" /> No.5/13 a, Ramapuram, Chennai</li>
+              <li className="flex gap-3"><MapPin className="w-4 h-4 text-accent shrink-0" /> Ramapuram & Moulivakkam, Chennai</li>
               <li className="flex gap-3"><Phone className="w-4 h-4 text-accent shrink-0" /> +91 98407 33736</li>
             </ul>
           </div>

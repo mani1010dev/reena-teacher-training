@@ -2,18 +2,18 @@ import { MapPin, Phone, Clock, Users } from "lucide-react";
 
 const branches = [
   {
-    name: "Chennai Campus",
+    name: "Ramapuram Campus",
     address: "No.5/13 a, Mullai Nagar, Ramapuram, Chennai, Tamil Nadu 600089",
     phone: "+91 98407 33736",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.123!2d80.178!3d13.029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d8a5555555%3A0x5555555555555555!2sRamapuram%2C%20Chennai!5e0!3m2!1sen!2sin!4v1714041111111!5m2!1sen!2sin",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
   {
-    name: "Online Learning Hub",
-    address: "Live virtual classrooms · Open to learners globally",
+    name: "Moulivakkam Campus",
+    address: "44 A, Sathyanarayana Puram Main Rd, Govindaraj Nagar, Moulivakkam, Chennai, Tamil Nadu 600125",
     phone: "+91 98407 33736",
-    map: null,
-    hours: "Flexible Batches",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.215!2d80.158!3d13.019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52608400000000%3A0x0!2sMoulivakkam%2C%20Chennai!5e0!3m2!1sen!2sin!4v1714041111112!5m2!1sen!2sin",
+    hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
 ];
 
@@ -26,7 +26,7 @@ const Locations = () => {
           <h2 className="font-serif text-4xl md:text-6xl text-primary text-balance font-bold">
             Our <span className="italic">Campuses</span>
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">Drop by our Chennai center or join our global online community.</p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">Drop by our Chennai centers to begin your journey.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -36,7 +36,7 @@ const Locations = () => {
                  className="clean-card p-8 flex flex-col md:flex-row gap-8 overflow-hidden group">
               <div className="md:w-1/2 flex flex-col">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary text-primary text-[10px] uppercase tracking-widest mb-6 w-fit font-bold">
-                  {b.name.includes("Online") ? "Virtual" : "Physical Campus"}
+                  Physical Campus
                 </div>
                 <h3 className="font-serif text-3xl text-primary mb-6 font-bold">{b.name}</h3>
                 <div className="space-y-4 text-muted-foreground flex-1">
@@ -44,17 +44,11 @@ const Locations = () => {
                   <p className="flex gap-3 text-sm leading-relaxed"><Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.phone}</p>
                   <p className="flex gap-3 text-sm leading-relaxed"><Clock className="w-4 h-4 text-accent shrink-0 mt-0.5" />{b.hours}</p>
                 </div>
-                {b.map ? (
-                  <a href={`https://maps.google.com/?q=${encodeURIComponent(b.address)}`} 
-                     target="_blank" rel="noreferrer" 
-                     className="btn-primary mt-8 inline-flex items-center justify-center gap-2">
-                    Get Directions
-                  </a>
-                ) : (
-                  <a href="#contact" className="btn-outline mt-8 inline-flex items-center justify-center gap-2">
-                    Enroll Online
-                  </a>
-                )}
+                <a href={`https://maps.google.com/?q=${encodeURIComponent(b.address)}`} 
+                   target="_blank" rel="noreferrer" 
+                   className="btn-primary mt-8 inline-flex items-center justify-center gap-2">
+                  Get Directions
+                </a>
               </div>
               
               <div className="md:w-1/2 min-h-[300px] relative rounded-lg overflow-hidden bg-secondary border border-border">

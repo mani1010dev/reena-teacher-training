@@ -17,10 +17,7 @@ const Hero = () => {
             <div className="animate-fade-up flex flex-col items-start text-left relative z-10">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded bg-white border border-border text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-8 shadow-sm">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span>Premium Montessori Training</span>
-              <span className="w-1 h-1 rounded-full bg-border" />
-              <Award className="w-3 h-3 text-accent" />
-              <span>NSDC and NSDVE Approved</span>
+              <span>Premium Montessori Teacher Training Academy</span>
             </div>
             
             <h1 className="font-serif text-5xl md:text-7xl xl:text-8xl leading-[1.05] text-primary text-balance font-bold mb-8">
