@@ -2,7 +2,7 @@ import { CheckCircle2, Briefcase, GraduationCap, Award } from "lucide-react";
 
 const AcademyInfo = () => {
   return (
-    <section className="py-24 bg-white">
+    <section id="academy" className="py-24 bg-white">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Eligibility Section */}

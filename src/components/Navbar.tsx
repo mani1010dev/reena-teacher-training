@@ -5,6 +5,7 @@ const links = [
   { href: "#top", label: "Home" },
   { href: "#courses", label: "Courses" },
   { href: "#curriculum", label: "Curriculum" },
+  { href: "#academy", label: "Eligibility" },
   { href: "#gallery", label: "Gallery" },
   { href: "#testimonials", label: "Voices" },
   { href: "#contact", label: "Apply" },
