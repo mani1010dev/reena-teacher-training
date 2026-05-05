@@ -5,14 +5,14 @@ const branches = [
     name: "Ramapuram Campus",
     address: "No.5/13 a, Mullai Nagar, Ramapuram, Chennai, Tamil Nadu 600089",
     phone: "+91 98407 33736",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.078475053417!2d80.17739187403384!3d13.030674513582465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d65984bc61%3A0x47e59584096ba7bb!2sMrs%20Reena%27s%20Cocoon%20play%20school%20%7C%20Pre%20school%20Recognised%20by%20Govt!5e0!3m2!1sen!2sin!4v1777463250539!5m2!1sen!2sin",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.083135240042!2d80.1799221!3d13.030377699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261e611a117a1%3A0x5a09dbe6a4c1ef82!2sMrs%20Reena%E2%80%99s%20Cocoon%20Montessori%20Teacher%20Training%20Academy%20-RAMAPURAM!5e0!3m2!1sen!2sin!4v1777963125966!5m2!1sen!2sin",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
   {
     name: "Moulivakkam Campus",
     address: "44 A, Sathyanarayana Puram Main Rd, Govindaraj Nagar, Moulivakkam, Chennai, Tamil Nadu 600125",
     phone: "+91 98407 33736",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2070852922266!2d80.13842987403366!3d13.02248071376281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52610045111b91%3A0x7de7555a3bb90751!2sMrs%20Reena%27s%20Cocoon%20play%20school%20%7C%20Pre%20school%20Recognised%20by%20Govt!5e0!3m2!1sen!2sin!4v1777463294318!5m2!1sen!2sin",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2072408509284!2d80.14106009999999!3d13.0224708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261907beb301f%3A0x9b895db284a09a83!2sMrs%20Reena%E2%80%99s%20Cocoon%20Montessori%20teacher%20training%20academy%20Moulivakkam!5e0!3m2!1sen!2sin!4v1777963155895!5m2!1sen!2sin",
     hours: "Mon – Sat: 9:00 AM – 6:00 PM",
   },
 ];
