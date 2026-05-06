@@ -43,8 +43,8 @@ const Navbar = () => {
         <a href="#top" className="flex items-center gap-3 group">
           <img src="/teacher-logo.png" alt="Logo" className={`transition-all duration-300 ${scrolled ? 'h-9' : 'h-12'} w-auto object-contain`} />
           <div className="leading-tight">
-            <div className={`font-serif font-bold transition-all duration-300 ${scrolled ? 'text-base' : 'text-xl'} text-primary`}>Mrs Reena's Cocoon</div>
-            <div className={`text-[8px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.2em] uppercase font-bold transition-all duration-300 ${scrolled ? 'text-primary/70' : 'text-accent'} block`}>Teacher Training Institute</div>
+            <div className={`font-serif font-bold transition-all duration-300 ${scrolled ? 'text-base' : 'text-xl'} text-primary`}>Reena's Cocoon</div>
+            <div className={`text-[8px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.2em] uppercase font-bold transition-all duration-300 ${scrolled ? 'text-primary/70' : 'text-accent'} block`}>Montessori Training Institute</div>
           </div>
         </a>
 

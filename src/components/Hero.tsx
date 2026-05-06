@@ -15,35 +15,28 @@ const Hero = () => {
             <img src="/teacher-logo.png" alt="" aria-hidden className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[500px] h-auto opacity-[0.12] pointer-events-none select-none blur-[2px] z-0" />
             
             <div className="animate-fade-up flex flex-col items-start text-left relative z-10">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded bg-white border border-border text-[10px] uppercase tracking-[0.2em] text-primary font-bold mb-8 shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded bg-white border border-border text-xs md:text-sm uppercase tracking-[0.2em] text-primary font-bold mb-8 shadow-sm">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span>Premium Montessori Teacher Training Institute</span>
+              <span>Reena’s Cocoon Montessori Training Institute</span>
             </div>
             
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary leading-[1.05] mb-8 font-bold">
-              Shaping the <span className="text-accent">Educators</span> <br /> 
-              of Tomorrow
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.1] mb-6 font-bold">
+              Start Your Career as a <span className="text-accent">Montessori Teacher</span>
+              <span className="block text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 font-medium">– No Experience Needed</span>
             </h1>
             
-            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium">
-              A premier Montessori training institute dedicated to excellence. Gain the certification, skills, and confidence to lead the next generation of learners.
+            <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium">
+              Learn from 12+ years of real classroom experience. Perfect for Teachers, Freshers & Homemakers looking to build a meaningful career.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <a href="#contact" className="px-10 py-4 rounded bg-primary text-white font-bold text-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">Enroll Now</a>
-              <a href="#courses" className="px-10 py-4 rounded border border-primary/20 text-primary font-bold text-sm hover:bg-white transition-all shadow-sm">Explore Courses</a>
+              <a href="#contact" className="px-10 py-4 rounded border border-primary/20 text-primary font-bold text-sm hover:bg-white transition-all shadow-sm">Book Free Demo</a>
             </div>
 
             <div className="flex items-center gap-6 pt-8 border-t border-primary/10">
-              <div className="flex -space-x-3">
-                {[12, 24, 36, 48].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-secondary flex items-center justify-center text-[10px] font-bold text-primary overflow-hidden">
-                    <img src={`https://i.pravatar.cc/100?img=${i}`} alt="" />
-                  </div>
-                ))}
-              </div>
-              <div className="text-xs font-bold text-primary/60">
-                <span className="text-primary">Trusted by 500+</span> schools globally
+              <div className="text-sm font-bold text-primary/80 leading-relaxed max-w-md italic">
+                "With 12+ Years of Experience, We Help You Start and Grow a Successful Montessori Teaching Career"
               </div>
             </div>
           </div>
@@ -74,13 +67,13 @@ const Hero = () => {
             {/* Stats Overlay */}
             <div className="absolute -top-8 left-12 z-20 bg-white px-6 py-4 rounded shadow-lg border border-border flex items-center gap-4">
               <div className="flex flex-col">
-                <span className="text-2xl font-serif font-bold text-primary leading-none"><Counter end={20} suffix="+" /></span>
+                <span className="text-2xl font-serif font-bold text-primary leading-none"><Counter end={12} suffix="+" /></span>
                 <span className="text-[9px] uppercase tracking-widest font-bold text-muted-foreground mt-1">Years</span>
               </div>
               <div className="w-px h-8 bg-border" />
               <div className="flex flex-col">
-                <span className="text-2xl font-serif font-bold text-primary leading-none"><Counter end={5} suffix="k+" /></span>
-                <span className="text-[9px] uppercase tracking-widest font-bold text-muted-foreground mt-1">Alumni</span>
+                <span className="text-2xl font-serif font-bold text-primary leading-none"><Counter end={100} suffix="+" /></span>
+                <span className="text-[9px] uppercase tracking-widest font-bold text-muted-foreground mt-1">Teachers Trained</span>
               </div>
             </div>
           </div>
